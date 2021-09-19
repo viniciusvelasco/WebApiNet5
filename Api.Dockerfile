@@ -6,16 +6,16 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["WebApiNet5/WebApiNet5.csproj", "WebApiNet5/"]
-RUN dotnet restore "WebApiNet5/WebApiNet5.csproj"
+COPY ["WebApiNet5.Api/WebApiNet5.Api.csproj", "WebApiNet5.Api/"]
+RUN dotnet restore "WebApiNet5.Api/WebApiNet5.Api.csproj"
 COPY . .
-WORKDIR "/src/WebApiNet5"
-RUN dotnet build "WebApiNet5.csproj" -c Release -o /app/build
+WORKDIR "/src/WebApiNet5.Api"
+RUN dotnet build "WebApiNet5.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "WebApiNet5.csproj" -c Release -o /app/publish
+RUN dotnet publish "WebApiNet5.Api.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "WebApiNet5.dll"]
+ENTRYPOINT ["dotnet", "WebApiNet5.Api.dll"]

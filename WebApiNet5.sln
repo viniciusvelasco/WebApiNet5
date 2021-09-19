@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiNet5", "WebApiNet5\WebApiNet5.csproj", "{8A9DEF15-BB31-4EBF-B8CD-29A6842CDCE9}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{913A560B-5DF0-4AAD-BD4B-661FB89FA03C}"
 	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		Api.Dockerfile = Api.Dockerfile
+		docker-compose.yml = docker-compose.yml
+		localhost.conf = localhost.conf
 		nginx.conf = nginx.conf
 		Nginx.Dockerfile = Nginx.Dockerfile
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiNet5.Api", "WebApiNet5.Api\WebApiNet5.Api.csproj", "{9C8F997A-2D9D-4E91-A5A4-418B81B0EF85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +21,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8A9DEF15-BB31-4EBF-B8CD-29A6842CDCE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A9DEF15-BB31-4EBF-B8CD-29A6842CDCE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A9DEF15-BB31-4EBF-B8CD-29A6842CDCE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A9DEF15-BB31-4EBF-B8CD-29A6842CDCE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C8F997A-2D9D-4E91-A5A4-418B81B0EF85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C8F997A-2D9D-4E91-A5A4-418B81B0EF85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C8F997A-2D9D-4E91-A5A4-418B81B0EF85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C8F997A-2D9D-4E91-A5A4-418B81B0EF85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
